@@ -22,3 +22,10 @@ In order to install do `npm install posix-fork`. After that `require('posix-fork
 ```
 
 `daemon()` will fork and immediately exit from master process, thus detaching the program from the controlling terminal (or other process). It accepts two arguments: `chdir` and `close`. If `chdir` is trueish then `daemon()` will change process' working directory to `/`, otherwise working dir will be left unchanged. If `close` is trueish then standard input and standard output will be redirected to `/dev/null`, otherwise no changes will be made to these file descriptors. If `daemon()` succeeds it returns `0`, if an error occurs it returns `-1`. The code below `daemon()` function invocation will run in child only. Warning: `process.pid` will report incorrect process id after `daemon()`, so use `posix.getpid()`. Read `man daemon` for more.
+
+    var posix = require('posix-fork')
+
+    if (posix.daemon())
+      throw 'Could not daemonize'
+    else
+      console.log('my pid is %s', posix.getpid())
