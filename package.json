@@ -1,0 +1,30 @@
+{
+  "name": "posix-fork",
+  "version": "0.1.0",
+  "description": "Posix ",
+  "homepage": "http://github.com/brianc/node-postgres",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/brianc/node-postgres.git"
+  },
+  "maintainers": [
+    {
+      "name": "Fedor Tarasov",
+      "url": "https://github.com/Fabel",
+      "email": "tarassovf@gmail.com"
+    },
+    {
+      "name": "Andrew Pazniak",
+      "url": "https://github.com/me-andre",
+      "email": "andrew.pazniak@gmail.com"
+    }
+  ],
+  "main": "./lib",
+  "scripts": {
+    "install": "node-gyp rebuild || (exit 0)"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  }
+}
+
